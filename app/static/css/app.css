@@ -1,3 +1,202 @@
 body {
     padding-top: 5rem;
+    background-color: rgb(212, 205, 205);
+}
+
+.form-container{
+    margin-right:700px;
+    background-color: white;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.heading{
+    padding-bottom: 5px;
+    font-weight: bold;
+    padding-top: 8px;
+}
+
+.box, .boxb{
+    width: 90%;
+}
+
+.boxb{
+    padding-bottom: 30px;
+}
+
+.box1{
+    width: 80%;
+}
+
+.box2{
+    width: 40%;
+}
+
+.Group1{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.Group2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.btn{
+    background-color: blue;
+    border-radius: 2px;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.file{
+    overflow: hidden;
+}
+
+
+.card{
+    border-radius:2px;
+    margin-right: 20px;
+    background-color: rgb(212, 205, 205);
+    
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+}
+
+.group{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardpic{
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+}
+
+.cardtitle{
+    font-weight: bold;
+    margin-bottom: -3px;
+    margin-left: 12px;
+    font-size: 17px;
+    padding-bottom: 2px;
+    margin-top: 10px;
+}
+
+.pc{
+    height: 25px;
+    width: 100px;
+    color: white;
+    background-color: rgb(45, 45, 250);
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: -5px;
+    margin-left: 12px;
+    padding-left: 7px;
+}
+
+.loc{
+    margin-left: 12px;
+    text-align: justify;
+}
+
+.card a{
+    background-color: rgb(2, 209, 130);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.icon {
+    width: 20px;
+    height: 21px;
+    margin-right: -12px;
+    margin-left: 8px;
+}
+
+.gA{
+    display: flex;
+    flex-direction: row;
+}
+
+h1{
+    margin-bottom: 22px;
+}
+
+.prop{
+    margin-right: 420px;
+
+}
+
+.proppic{
+    width: 50%;
+    height: auto;
+    border-radius: 2px;
+    float: left;
+    padding-right: 20px;
+}
+
+.propinfo{
+    background-color: white;
+    text-align: justify;
+    padding-right: 20px;
+}
+
+.pA, .pB, .pc{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.pA .price{
+    width: 110px;
+    height: 28px;
+    background-color:blue ;
+    color: white;
+    border-radius: 15px;
+    display: inline-block;
+    text-align: center;
+    margin-right: 15px;
+}
+
+.pA .type{
+    width: 110px;
+    height: 28px;
+    background-color:rgb(255, 217, 0) ;
+    color: white;
+    border-radius: 15px;
+    display: inline-block;
+    text-align: center;
+}
+
+.pB .label{
+    margin-right: 10px;
+}
+
+.pB .beds, .baths{
+    margin-right: 5px;
+}
+
+
+.pC{
+    display: flex;
+    flex-direction: row;
+}
+
+.propinfo button{
+    border-radius: 10px;
+    background-color: rgb(2, 209, 130);
+    color: white;
+    margin-bottom: 12px;
 }

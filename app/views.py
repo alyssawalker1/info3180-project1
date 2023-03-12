@@ -4,9 +4,12 @@ Jinja2 Documentation:    https://jinja.palletsprojects.com/
 Werkzeug Documentation:  https://werkzeug.palletsprojects.com/
 This file contains the routes for your application.
 """
-
-from app import app
-from flask import render_template, request, redirect, url_for
+import os
+from app import app,db
+from flask import render_template, request, redirect, url_for, flash, send_from_directory,session
+from werkzeug.utils import secure_filename
+from app.models import Property
+from app.forms import New_Property
 
 
 ###
@@ -22,8 +25,39 @@ def home():
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Mary Jane")
+    return render_template('about.html', name="Alyssa's Property Listings")
 
+@app.route("/properties/create", methods=['POST','GET'])
+def createproperty():
+    form = New_Property()
+    if (request.method == 'POST'):
+        if (form.validate_on_submit()):
+            img = form.photo.data
+            filename = secure_filename(img.filename)
+            img.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            
+            db.session.add(Property(form.title.data, form.num_bedrooms.data, form.num_baths.data, form.location.data, 
+                                    form.price.data, form.prop_type.data, form.Desc.data, filename))
+            db.session.commit()
+            flash('Successfully Added Property')
+            return redirect(url_for('listproperties'))
+        else:
+            flash_errors(form)
+    return render_template('property.html', form=form)
+   
+@app.route("/properties")         
+def listproperties():
+    props= Property.query.all()
+    return render_template('properties.html', props = props)
+
+@app.route("/properties/<propertyid>")  
+def getproperty(propertyid):
+    id = Property.query.filter_by(property_id=propertyid).first()
+    return render_template("oneproperty.html", id =id)
+
+@app.route('/uploads/<filename>')
+def get_image(filename):
+    return send_from_directory(os.path.join(os.getcwd(), app.config["UPLOAD_FOLDER"]), filename)
 
 ###
 # The functions below should be applicable to all Flask apps.
