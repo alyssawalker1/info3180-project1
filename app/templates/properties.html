@@ -10,7 +10,7 @@
             <div class="group">
                 <h5 class ="cardtitle">{{p.title}} </h5>
                 <div class="gA">
-                    <img class="icon" src="static/location-icon.png">
+                    <img class="icon" src="{{url_for('static', filename='/location-icon.png')}}">
                     <p class ="loc"> {{p.location}} </p>
                 </div>
                 <span class="pc"> {{"${:,}".format(p.price) }} </span>

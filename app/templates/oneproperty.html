@@ -11,16 +11,16 @@
             </div>
             <p>{{id.Desc}} </p>
             <div class="pB">
-                <img class="icon" src="static/bed.png">
+                <img class="icon" src="{{url_for('static', filename='/bed.png')}}">
                 <p class="beds"> {{id.num_bedrooms}} </p><p class="label"> Bedrooms </p>
-                <img class="icon" src="static/bath.png">
+                <img class="icon1" src="{{url_for('static', filename='/bath.png')}}">
                 <p class ="baths"> {{id.num_baths}} </p><p class="label"> Bathrooms </p>
             </div>
             <div class="pC">
-                <img class="icon" src="static/location-icon.png">
+                <img class="icon" src="{{url_for('static', filename='/location-icon.png')}}">
                 <p class ="loc"> {{id.location}} </p>
             </div>
-            <button type="submit"> Email Realtor </button>
+            <button class="butn"> Email Realtor </button>
         </div>
     </div>    
 
